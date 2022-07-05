@@ -82,7 +82,7 @@ setup(
                       # "pandas<=1.1.5",
                       "numpy",
                       # "numpy<=1.23.0",
-                      # "pymongo>=3.6.0, <= 3.11.0",
+                      "pymongo>=3.6.0, <= 3.11.0",
                       "pymongo",
                       "pytz",
                       "tzlocal",
