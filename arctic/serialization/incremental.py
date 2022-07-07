@@ -21,7 +21,7 @@ log = logging.getLogger(__name__)
 
 def incremental_checksum(item, curr_sha=None, is_bytes=False):
     curr_sha = hashlib.sha1() if curr_sha is None else curr_sha
-    curr_sha.update(item if is_bytes else item.tostring())
+    curr_sha.update(item if is_bytes else item.tobytes())
     return curr_sha
 
 
@@ -220,7 +220,7 @@ class IncrementalPandasToRecArraySerializer(LazyIncrementalSerializer):
                 forced_dtype=self.dtype if self._has_string_object else None)
 
             # Let the gc collect the intermediate serialized chunk as early as possible
-            chunk = chunk.tostring() if chunk is not None and get_bytes else chunk
+            chunk = chunk.tobytes() if chunk is not None and get_bytes else chunk
 
             yield chunk, self.dtype, from_idx, curr_stop
             from_idx = curr_stop

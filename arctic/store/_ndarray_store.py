@@ -445,7 +445,7 @@ class NdarrayStore(object):
             self._do_append(collection, version, symbol, item, previous_version, dirty_append)
 
     def _do_append(self, collection, version, symbol, item, previous_version, dirty_append):
-        data = item.tostring()
+        data = item.tobytes()
         # Compatibility with Arctic 1.22.0 that didn't write base_sha into the version document
         version['base_sha'] = previous_version.get('base_sha', Binary(b''))
         version['up_to'] = previous_version['up_to'] + len(item)
