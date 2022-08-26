@@ -58,7 +58,7 @@ class PyTest(TestCommand):
 
 setup(
     name="arctic",
-    version="2.0.0",
+    version="2.0.1",
     author="Man AHL Technology",
     author_email="ManAHLTech@ahl.com",
     description=("AHL Research Versioned TimeSeries and Tick store"),
